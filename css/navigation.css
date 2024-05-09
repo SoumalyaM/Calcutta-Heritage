@@ -1,0 +1,132 @@
+.navbar {
+  width: 100%;
+  /* background-color: rgb(0, 255, 98); */
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+}
+
+.navbar__left {
+  width: 60%;
+  display: flex;
+  gap: 5rem;
+}
+
+.navbar__logo {
+  height: 6rem;
+  width: fit-content;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.412),
+      rgba(255, 255, 255, 0.367)
+    ),
+    url(../assets/howrahBridge.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__logo--text {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+}
+
+.navbar__search {
+  display: block;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__search form {
+  display: block;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__search label {
+  display: flex;
+  align-items: center;
+  border: 0.5px solid rgb(212, 211, 211);
+  border-radius: 5px;
+}
+
+.navbar__search input {
+  display: inline-block;
+  width: 35rem;
+  color: rgb(54, 54, 54);
+  font-size: 1.5rem;
+  padding: 0.7rem;
+  border: 0.5px solid rgb(212, 211, 211);
+  border-radius: 5px;
+}
+
+.navbar__search input:focus{
+  outline: 2px solid rgba(43, 255, 0, 0.573);
+}
+
+.navbar__search button {
+  padding: 0.7rem;
+}
+
+.navbar__search button:hover {
+  padding: 0.7rem;
+  outline: 2px solid rgba(43, 255, 0, 0.573);
+}
+
+.navbar__search img {
+  /* margin: 0.8rem; */
+  height: 2rem;
+  cursor: pointer;
+  color: aqua;
+}
+.navbar__right {
+  width: 40%;
+  /* padding: 2rem 0; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3rem;
+}
+
+.navbar__right select {
+  font-size: 1.5rem;
+  color: rgb(54, 54, 54);
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.navbar__right__buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: greenyellow;
+  padding: 0.6rem 1rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}

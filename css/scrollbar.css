@@ -1,0 +1,23 @@
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    padding: 2px !important;
+    background: rgba(202, 202, 202, 0.704);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #63ff95aa;
+    border-radius: 10px;
+    margin: 2px;
+    box-shadow: 4px 4px 5px rgb(47, 47, 47), -4px -4px 5px rgb(47, 47, 47),
+      -4px 4px 5px rgb(47, 47, 47), 4px -4px 5px rgb(47, 47, 47);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    border: 2px solid #00000076;
+    cursor: grab;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    cursor: grabbing !important;
+  }

@@ -1,0 +1,35 @@
+*,
+*::after,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  /* background-color: rgba(0, 255, 123, 0); */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.p-x {
+  padding: 0rem 15rem;
+}
+
+
+footer {
+  position: relative;
+  bottom: 0;
+  height: 5rem;
+  width: 100%;
+  background-color: black;
+}

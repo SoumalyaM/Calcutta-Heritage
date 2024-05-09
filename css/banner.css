@@ -1,0 +1,57 @@
+/* ---------------------------------------------- */
+.explore-banner {
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: rgba(136, 255, 0, 0.392);
+  border-top: 0.2rem solid rgba(16, 68, 2, 0.055);
+  border-bottom: 0.2rem solid rgba(16, 68, 2, 0.055);
+}
+
+/* ------------------------------------------- */
+.swiper-container {
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: rgba(164, 164, 164, 0.203);
+  margin-bottom: 2rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 30rem;
+  /* transition: all 1s ease-in-out; */
+}
+
+.swiper-slide {
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.swiper-1 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1200px-Victoria_Memorial_situated_in_Kolkata.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.swiper-2 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/St_Paul%27s_Cathedral.jpg/1280px-St_Paul%27s_Cathedral.jpg");
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+}
+.swiper-3 {
+  background-image: url("https://kolkatatourism.travel/images/places-to-visit/headers/indian-museum-kolkata-entry-fee-timings-holidays-reviews-header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.swiper-4 {
+  background-image: url('https://content.jdmagicbox.com/comp/kolkata/06/033p5000006/catalogue/m-p-birla-planetarium-midleton-row-kolkata-tourist-attraction-a0ceujjqkz.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.swiper-5 {
+  background-image: url("https://kevinstandagephotography.files.wordpress.com/2023/05/ksp_4824-2.jpg?w=1000");
+  background-position: top;
+  background-repeat: no-repeat;
+}
