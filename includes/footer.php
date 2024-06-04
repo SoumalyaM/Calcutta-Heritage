@@ -3,7 +3,7 @@
 
 
 
-    <script src="/otb/app.js"></script>
+    <script src="/otb/js/app.js"></script>
 </body>
 
 </html>

@@ -5,14 +5,15 @@
 function confirm_query($result)
 {
     global $connection;
-    if (!$result) die('Query Failed: ' . mysqli_error($connection));
+    if (!$result)
+        die('Query Failed: ' . mysqli_error($connection));
 }
 
 function create_attractions()
 {
     global $connection;
     if (isset($_POST['submit'])) {
-        $attraction_name = $_POST['attraction_name'];
+        $attraction_name = mysqli_real_escape_string($connection,$_POST['attraction_name']);
         $attraction_description = $_POST['attraction_description'];
 
         $attraction_image = $_FILES['attraction_image']['name'];
@@ -182,7 +183,7 @@ function all_user_details()
                 $row['user_type'];
             echo $row['user_type'] == 1 ? ' (admin)' : ' (user)';
             echo
-            "
+                "
                 </td>
                 <td>
                 <a href='#editEmployeeModal' class='edit' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
@@ -212,6 +213,8 @@ function delete_user()
             confirm_query($result);
 
             header("Location: users.php");
+        } else {
+            echo "hello";
         }
     }
 }
@@ -249,7 +252,7 @@ function add_user()
         $password = $_POST['password'];
 
         $name = mysqli_real_escape_string($connection, $name);
-        $username =  mysqli_real_escape_string($connection, $username);
+        $username = mysqli_real_escape_string($connection, $username);
         $email = mysqli_real_escape_string($connection, $email);
         $phone_number = mysqli_real_escape_string($connection, $phone_number);
         $password = mysqli_real_escape_string($connection, $password);
@@ -285,8 +288,9 @@ function check_user_duplicate($username, $email, $phone_number)
 
     $select_all_query = "SELECT * FROM users";
 
-    $result = mysqli_query($connection,  $select_all_query);
-    if (!$result)  die('Query Failed: ' . mysqli_error($connection));
+    $result = mysqli_query($connection, $select_all_query);
+    if (!$result)
+        die('Query Failed: ' . mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($result)) {
         if ($username === $row['username']) {

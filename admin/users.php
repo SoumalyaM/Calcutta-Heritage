@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <!-- Edit Modal HTML -->
+                    <!-- Add Modal HTML -->
                     <div id="addEmployeeModal" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -168,7 +168,7 @@
                                         <input type="submit" class="btn btn-danger" value="Delete">
 
                                         <?php delete_user(); ?>
-                                       
+
                                         <?php delete_multiple_users_by_checkbox(); ?>
 
                                     </div>
