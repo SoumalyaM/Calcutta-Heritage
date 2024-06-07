@@ -4,11 +4,16 @@
 <?php
 if (!isset($_SESSION["payment"]))
     header("Location: index.php");
+else
+    unset($_SESSION["payment"]);
+
+
 require ("includes/payment-config.php");
 
 $token = $_POST["stripeToken"];
 $amount = $_POST["amount"];
 $site = $_POST["site"];
+
 $ticket_date = $_POST["ticket-date"];
 
 if (!empty($token)) {
@@ -60,10 +65,11 @@ if (!empty($token)) {
     $uniqueTicketId = generateUniqueTicketId($connection);
     // echo "Generated unique ticket ID: " . $uniqueTicketId;
 
-
+    $payment_attraction_name = mysqli_real_escape_string($connection, $site);
+    $ticket_url = mysqli_real_escape_string($connection, $filePath);
 
     $payment_query = "INSERT INTO payments (payment_customer_id, payment_customer_name, payment_token, payment_amount, payment_attraction_name, ticket_date, ticket_url, ticket_id) ";
-    $payment_query .= "VALUES ('{$_SESSION['user-id']}', '{$_SESSION['name']}', '$token', '$amount', '$site', '$ticket_date', '$filePath', '$uniqueTicketId')";
+    $payment_query .= "VALUES ('{$_SESSION['user-id']}', '{$_SESSION['name']}', '$token', '$amount', '$payment_attraction_name', '$ticket_date', '$ticket_url', '$uniqueTicketId')";
     $payment_result = mysqli_query($connection, $payment_query);
 
     // echo "<pre>";
@@ -81,6 +87,8 @@ use Endroid\QrCode\ErrorCorrectionLevel;
 // use Endroid\QrCode\RoundBlockSizeMode;
 use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\Color\Color;
+
+use Dompdf\Dompdf;
 
 // Generate the QR code
 
@@ -112,32 +120,25 @@ $result->saveToFile($filePath);
 ?>
 
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-    body {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
 
 </head>
 
-<div>
-    <a href="#"
-        class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-            src="<?= $filePath ?>" alt="">
-        <div class="flex flex-col justify-between p-4 leading-normal">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?= $site ?></h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><?= $ticket_date ?></p>
-        </div>
+<body class='bg-gray-100'>
 
-    </a>
-    <p class="py-3 text-center text-blue-700"><a href="admin/payments.php">View your tickets</a></p>
+    <div class='flex justify-center items-center h-screen'>
+        <a href="generate-pdf.php?code=<?= $uniqueTicketId ?>" target='_blank'
+            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                src="<?= $filePath ?>" alt="">
+            <div class="flex flex-col justify-between p-4 leading-normal">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?= $site ?></h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><?= $ticket_date ?></p>
+            </div>
 
-</div>
+        </a>
+        <p class="py-3 text-center text-blue-700"><a href="admin/payments.php">View your tickets</a></p>
 
+    </div>
 
 </body>
 

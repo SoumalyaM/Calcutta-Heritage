@@ -160,9 +160,10 @@ function view_attractions()
         die('query Failed' . mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($result)) {
+        $site = urlencode($row['attraction_name']);
         echo
             "
-            <a href='payment.php?site={$row['attraction_name']}&pay={$row['attraction_ticket_price']}' class='card'>
+            <a href='payment.php?site={$site}&pay={$row['attraction_ticket_price']}' class='card'>
         ";
         echo '<div style="background-image: url'
             . "('/otb/attraction_images/" .

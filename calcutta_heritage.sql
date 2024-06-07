@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2024 at 08:06 AM
+-- Generation Time: Jun 07, 2024 at 09:10 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -72,7 +72,8 @@ CREATE TABLE `payments` (
 
 INSERT INTO `payments` (`payment_id`, `payment_customer_id`, `payment_customer_name`, `payment_token`, `payment_amount`, `payment_date`, `payment_attraction_name`, `ticket_date`, `ticket_url`, `ticket_id`) VALUES
 (13, 56, 'test1', 'tok_1POvMn01dKe8QDzvyyljf7dl', 100, '2024-06-07 05:29:39', 'Indian Meuseum', '01/06/2024', 'tickets/Indian Meuseum1717738179.png', 'g1cRnl'),
-(17, 56, 'test1', 'tok_1POvvt01dKe8QDzvYncspFhz', 80, '2024-06-07 06:05:52', 'Victoria Memorial', '19/06/2024', 'tickets/Victoria Memorial1717740352.png', 'WemAal');
+(17, 56, 'test1', 'tok_1POvvt01dKe8QDzvYncspFhz', 80, '2024-06-07 06:05:52', 'Victoria Memorial', '19/06/2024', 'tickets/Victoria Memorial1717740352.png', 'WemAal'),
+(23, 56, 'test1', 'tok_1PP81u01dKe8QDzvIKleOpEU', 80, '2024-06-07 19:00:53', 'Victoria Memorial', '27/06/2024', 'tickets/Victoria Memorial1717786853.png', 'Ta7LDi');
 
 -- --------------------------------------------------------
 
@@ -138,7 +139,7 @@ ALTER TABLE `attractions`
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`

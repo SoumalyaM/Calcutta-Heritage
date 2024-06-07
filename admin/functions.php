@@ -349,7 +349,7 @@ function my_payments()
                 . "
                 </td>
                 <td>
-                <a href='#ticket' class='ticket' data-toggle='modal'><img src='../{$row['ticket_url']}'></a>
+                <a href='http://localhost/otb/generate-pdf.php?code={$row['ticket_id']}' target='_blank' class='ticket' data-toggle='modal'><img src='../{$row['ticket_url']}'></a>
                 </td>
             </tr>
         ";
