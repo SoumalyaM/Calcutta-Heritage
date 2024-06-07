@@ -32,7 +32,7 @@
   .card{
     display: block;
     /* min-height: 30rem; */
-    min-width: 25rem;
+    width: 25rem;
     /* background-color: rgba(8, 89, 8, 0.538); */
     cursor: pointer;
   }
