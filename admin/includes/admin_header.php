@@ -5,7 +5,7 @@
 
 <?php
 
-if (!isset($_SESSION['user_type'])) {
+if (!isset($_SESSION['user-id'])) {
     header("Location: ../index.php");
 } else {
     // if admin
@@ -25,6 +25,7 @@ if (!isset($_SESSION['user_type'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/howrahBridge.jpg" type="image/x-icon">
 
     <title>Calcutta Heritage Admin</title>
 

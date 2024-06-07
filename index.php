@@ -1,26 +1,52 @@
+<?php include 'includes/header.php'; ?>
 <?php include 'includes/db.php'; ?>
 <?php include 'includes/functions.php'; ?>
 
-<?php include 'includes/header.php'; ?>
+<?php if (isset($_SESSION["payment"])) unset($_SESSION['payment']) ?>
 
-<!-- Navbar -->
-<?php include 'includes/navigation.php'; ?>
+<link rel="stylesheet" href="/otb/css/main.css">
+<link rel="stylesheet" href="/otb/css/mini.min.css">
 
-<!-- Banner -->
-<?php include 'includes/banner.php'; ?>
 
-<section class="attractions p-x">
-    <div class="attractions__heading">
-        <h2>Recommended Places</h2>
-    </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <div class="attractions_tickets">
+<script src="/otb/js/mini.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        <?php view_attractions(); ?>
+</head>
 
-    </div>
-</section>
+<body>
 
-<footer class="p-x"></footer>
+    <!-- Navbar -->
+    <?php include 'includes/navigation.php'; ?>
 
-<?php include 'includes/footer.php'; ?>
+    <!-- Banner -->
+    <?php include 'includes/banner.php'; ?>
+
+    <section class="attractions p-x">
+        <div class="attractions__heading">
+            <h2>Recommended Places</h2>
+        </div>
+
+        <div class="attractions_tickets">
+
+            <?php view_attractions(); ?>
+
+        </div>
+    </section>
+
+    <footer class="p-x">
+        Calcutta Heritage &copy; 2024. All Rights Reserved.
+    </footer>
+
+
+    <?php if (isset($_SESSION['error'])): ?>
+        <script>
+            alertify.set('notifier', 'position', 'top-center');
+            alertify.error(' <?= $_SESSION['error'] ?> ');
+        </script>
+        <?php unset($_SESSION['error']); ?>
+    <?php endif ?>
+
+
+    <?php include 'includes/footer.php'; ?>

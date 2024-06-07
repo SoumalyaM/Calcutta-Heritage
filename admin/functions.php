@@ -13,7 +13,7 @@ function create_attractions()
 {
     global $connection;
     if (isset($_POST['submit'])) {
-        $attraction_name = mysqli_real_escape_string($connection,$_POST['attraction_name']);
+        $attraction_name = mysqli_real_escape_string($connection, $_POST['attraction_name']);
         $attraction_description = $_POST['attraction_description'];
 
         $attraction_image = $_FILES['attraction_image']['name'];
@@ -305,4 +305,59 @@ function check_user_duplicate($username, $email, $phone_number)
         }
     }
     return false;
+}
+
+function my_payments()
+{
+    global $connection;
+
+    $select_all_query = "SELECT * FROM payments";
+
+    $result = mysqli_query($connection, $select_all_query);
+    confirm_query($result);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $timestamp = strtotime($row['payment_date']);
+            $date = date('Y-m-d', $timestamp);
+            echo '
+            <tr>
+                <td>
+                    <span class="custom-checkbox">';
+            echo "        <input type='checkbox' id='{$row['payment_id']}' name='options[]' value='{$row['payment_id']}'>" .
+                '<label for="checkbox1"></label>
+                    </span>
+                </td>
+                <th>
+                ' .
+                $row['payment_attraction_name']
+                . ' 
+                </th>
+                <td>
+                ' .
+                'Rs. ' . $row["payment_amount"]
+                . '  
+                </td>
+                <td>
+                ' .
+                $date
+                . '
+                </td>
+                <td>
+                ' .
+                $row['ticket_date']
+                . "
+                </td>
+                <td>
+                <a href='#ticket' class='ticket' data-toggle='modal'><img src='../{$row['ticket_url']}'></a>
+                </td>
+            </tr>
+        ";
+        }
+    } else {
+        echo "
+            <tr>
+                <td colspan='8'>No Record Found!</td>
+            </tr>";
+    }
 }

@@ -14,7 +14,8 @@
         <li><a href="../index.php">Home Page</a></li>
 
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['name']; ?> <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                <?php echo $_SESSION['name']; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
                     <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -27,7 +28,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a href="/otb/admin/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                 </li>
             </ul>
         </li>
@@ -41,23 +42,29 @@
             <li>
                 <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
             </li>
+            <?php if (isset($_SESSION['user-is-admin'])): ?>
+                <li>
+                    <a href="attractions.php"><i class="fa fa-fw fa-edit"></i> Attractions</a>
+                </li>
+            <?php endif ?>
             <li>
-                <a href="attractions.php"><i class="fa fa-fw fa-edit"></i> Attractions</a>
+                <a href="payments.php"><i class="fa fa-fw fa-wrench"></i> Payments</a>
             </li>
-            <li>
-                <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Payments</a>
-            </li>
-            <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="users" class="collapse">
-                    <li>
-                        <a href="users.php">Manage Users</a>
-                    </li>
-                    <li>
-                        <a href="#">Add Admin</a>
-                    </li>
-                </ul>
-            </li>
+            <?php if (isset($_SESSION['user-is-admin'])): ?>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i>
+                        Users <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="users" class="collapse">
+                        <li>
+                            <a href="users.php">Manage Users</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Admin</a>
+                        </li>
+                    </ul>
+                </li>
+                </li>
+            <?php endif ?>
         </ul>
     </div>
     <!-- /.navbar-collapse -->

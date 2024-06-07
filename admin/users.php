@@ -26,7 +26,7 @@
                                             <!-- <h2>Manage <b>Employees</b></h2> -->
                                         </div>
                                         <div class="col-sm-4">
-                                            <a href=""><a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a></a>
+                                            <a href=""><a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a></a>
                                             <a href="" class="btn btn-danger delete_multiple_user_btn" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete Selected</span></a>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
                             <div class="modal-content">
                                 <form>
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Edit Employee</h4>
+                                        <h4 class="modal-title">Edit User</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                     </div>
                                     <div class="modal-body">
@@ -155,7 +155,7 @@
                             <div class="modal-content">
                                 <form action="" method="POST">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Delete Employee</h4>
+                                        <h4 class="modal-title">Delete User</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                     </div>
                                     <div class="modal-body">

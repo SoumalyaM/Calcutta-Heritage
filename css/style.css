@@ -9,6 +9,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -31,5 +32,11 @@ footer {
   bottom: 0;
   height: 5rem;
   width: 100%;
-  background-color: black;
+  background-color: #2b8a3e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 600;
 }

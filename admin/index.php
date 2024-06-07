@@ -15,7 +15,7 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Welcome to admin
-                            <span><b><?php echo $_SESSION['username']; ?></b></span>
+                            <span><b><?= $_SESSION['username'] ?></b></span>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
