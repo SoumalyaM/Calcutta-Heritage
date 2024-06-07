@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2024 at 07:31 AM
+-- Generation Time: Jun 07, 2024 at 08:06 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,7 +71,8 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`payment_id`, `payment_customer_id`, `payment_customer_name`, `payment_token`, `payment_amount`, `payment_date`, `payment_attraction_name`, `ticket_date`, `ticket_url`, `ticket_id`) VALUES
-(13, 56, 'test1', 'tok_1POvMn01dKe8QDzvyyljf7dl', 100, '2024-06-07 05:29:39', 'Indian Meuseum', '01/06/2024', 'tickets/Indian Meuseum1717738179.png', 'g1cRnl');
+(13, 56, 'test1', 'tok_1POvMn01dKe8QDzvyyljf7dl', 100, '2024-06-07 05:29:39', 'Indian Meuseum', '01/06/2024', 'tickets/Indian Meuseum1717738179.png', 'g1cRnl'),
+(17, 56, 'test1', 'tok_1POvvt01dKe8QDzvYncspFhz', 80, '2024-06-07 06:05:52', 'Victoria Memorial', '19/06/2024', 'tickets/Victoria Memorial1717740352.png', 'WemAal');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `username`, `user_image`, `email`, `phone_number`, `password_hash`, `user_type`, `create_time`) VALUES
-(55, 'Niladri', 'niladri_17', '', 'niladri.basak.007@gmail.com', 123456, '$2y$10$69hellomotherfucker69uctR5y9PDolnAn0qmkLYfFRfHhZgnSEa', 1, '2024-06-05 17:36:11'),
 (56, 'test1', 'test1', '', 'test1@test.com', 123456789, '$2y$10$69hellomotherfucker69uctR5y9PDolnAn0qmkLYfFRfHhZgnSEa', 0, '2024-06-06 11:55:20'),
 (57, 'test2', 'test2', '', 'test2@test.com', 45678, '$2y$10$69hellomotherfucker69uctR5y9PDolnAn0qmkLYfFRfHhZgnSEa', 0, '2024-06-06 12:00:14'),
 (58, 'test3', 'test3', '', 'test3@test.com', 978697834, '$2y$10$69hellomotherfucker69uctR5y9PDolnAn0qmkLYfFRfHhZgnSEa', 0, '2024-06-06 12:01:14'),
@@ -138,7 +138,7 @@ ALTER TABLE `attractions`
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
