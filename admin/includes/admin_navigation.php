@@ -36,9 +36,11 @@
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-            <li>
-                <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-            </li>
+            <?php if (isset($_SESSION['user-is-admin'])): ?>
+                <li>
+                    <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+            <?php endif ?>
             <li>
                 <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
             </li>
