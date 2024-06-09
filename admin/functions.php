@@ -320,6 +320,7 @@ function my_payments()
         while ($row = mysqli_fetch_assoc($result)) {
             $timestamp = strtotime($row['payment_date']);
             $date = date('Y-m-d', $timestamp);
+            $ticket_url = htmlspecialchars($row['ticket_url']);
             echo '
             <tr>
                 <td>
@@ -349,7 +350,7 @@ function my_payments()
                 . "
                 </td>
                 <td>
-                <a href='http://localhost/otb/generate-pdf.php?code={$row['ticket_id']}' target='_blank' class='ticket' data-toggle='modal'><img src='../{$row['ticket_url']}'></a>
+                <a href='http://localhost/otb/generate-pdf.php?code={$row['ticket_id']}' target='_blank' class='ticket' data-toggle='modal'><img src='../{$ticket_url}'></a>
                 </td>
             </tr>
         ";

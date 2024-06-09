@@ -2,22 +2,32 @@
 <?php include 'includes/db.php'; ?>
 <?php include 'includes/functions.php'; ?>
 
-<?php if (isset($_SESSION["payment"])) unset($_SESSION['payment']) ?>
+<?php if (isset($_SESSION['token']))
+    unset($_SESSION['token']); ?>
 
-<link rel="stylesheet" href="/otb/css/main.css">
-<link rel="stylesheet" href="/otb/css/mini.min.css">
+<?php
+$token = bin2hex(random_bytes(32));
+$_SESSION['token'] = $token;
+$_SESSION['token-check'] = $token;
+?>
+
+<?php if (isset($_SESSION["payment"]))
+    unset($_SESSION['payment']) ?>
+
+    <link rel="stylesheet" href="/otb/css/main.css">
+    <link rel="stylesheet" href="/otb/css/mini.min.css">
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<script src="/otb/js/mini.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/otb/js/mini.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <!-- Navbar -->
+        <!-- Navbar -->
     <?php include 'includes/navigation.php'; ?>
 
     <!-- Banner -->

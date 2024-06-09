@@ -14,7 +14,10 @@ $token = $_POST["stripeToken"];
 $amount = $_POST["amount"];
 $site = $_POST["site"];
 
-$ticket_date = $_POST["ticket-date"];
+
+$ticket_date = $_POST["ticket-date"]; 
+$date = new DateTime($ticket_date);
+$ticket_date = $date->format('d-m-Y');
 
 if (!empty($token)) {
     global $connecton;
@@ -125,7 +128,7 @@ $result->saveToFile($filePath);
 
 <body class='bg-gray-100'>
 
-    <div class='flex justify-center items-center h-screen'>
+    <div class='flex flex-col justify-center items-center h-screen'>
         <a href="generate-pdf.php?code=<?= $uniqueTicketId ?>" target='_blank'
             class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
             <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
